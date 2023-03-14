@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image-to-text-converter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+  <h2 class="heading">Image -> Text Converter</h2>
+  <div class="containers">
+    <div class="card card__1">
+      <form action="/upload" method="post" class="form" enctype="multipart/form-data">
+        <div class="form__control">
+          <label for="amount">Attach Image</label>
+          <input type="file" name="image" placeholder="Attach File" required />
+        </div>
+        <button type="submit" class="btn">Process</button>
+      </form>
+    </div>
+  
+    <div class="card card__2">
+      <h4 class="heading__2">Recognized text</h4>
+      <% if (error) { %>
+        <p class="error"><%= error %></p>
+      <% } %>
+
+      <% if (text) { %>
+        <p class="card__content"><%= text %></p>
+      <% } %> 
+    </div>
+
+  </div>
+</body>
+</html>
